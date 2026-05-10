@@ -1,0 +1,156 @@
+EDR — Endpoint Detection and Response
+
+Think of EDR like a very smart CCTV camera installed INSIDE every single computer in your company. It watches every process, file, login, and network connection happening on that machine — 24/7. And unlike a normal camera, it can also fight back.
+What is an endpoint?
+Endpoints include
+Laptops, desktops, servers, mobile devices — any device that connects to your network
+
+Windows servers, Linux servers, Unix endpoints — all monitored by SentinelOne
+What does EDR actually do?
+Monitors every process running on a machine in real time
+Records file creation, modification, deletion — every change
+Tracks network connections made from the endpoint
+Detects threats using behavioral AI, not just signatures
+Isolates infected endpoint from the network instantly
+Rolls back all changes malware made — like a time machine
+Stores full telemetry for forensic investigation later
+The process tree — heart of EDR investigation
+Real attack chain you would see in SentinelOne
+Word.exe
+→
+PowerShell.exe
+→
+cmd.exe
+→
+net.exe
+Word opening PowerShell is ABNORMAL. EDR detects this behavioral pattern and raises a threat — even if the malware is brand new and has no known signature.
+EDR vs old antivirus — why EDR is better
+Old antivirus
+Only blocks KNOWN threats using a signature database. New malware walks right past it.
+EDR (SentinelOne)
+Detects BEHAVIOR. Even unknown malware gets caught if it acts suspiciously.
+Key point for interview: EDR works on the endpoint level. It is your deep visibility into ONE machine at a time — what ran, what changed, what connected where.
+
+
+
+
+
+XDR — Extended Detection and Response
+
+If EDR is a smart camera in one room, XDR is a command center with cameras in EVERY room — plus the hallways, the front gate, the parking lot, and the phone system — all feeding into ONE screen. One analyst sees everything at once.
+What XDR adds on top of EDR
+XDR collects data from ALL these sources — not just endpoints
+Endpoints (EDR) Email security Firewall logs Cloud workloads Identity/AD Network traffic SIEM Threat intelligence
+Why XDR is powerful — a real scenario
+Attack that EDR alone might miss — XDR catches it
+Step 1 — Attacker sends phishing email (email security sees this)
+Step 2 — User clicks link, malware downloads (EDR sees this on endpoint)
+Step 3 — Malware talks to C2 server on port 443 (firewall/network sees this)
+Step 4 — Attacker logs in using stolen credentials from cloud (identity sees this)
+
+EDR only sees Step 2. XDR sees ALL FOUR steps and connects them into ONE incident timeline — giving you the full attack story automatically.
+What XDR does automatically
+Correlates alerts from multiple security tools into one single incident
+Reduces alert fatigue — 100 alerts become 1 grouped incident
+Provides full attack timeline across all layers (email → endpoint → network → cloud)
+Uses AI to prioritize which threats need attention first
+Allows response from one console — isolate, block, investigate all in one place
+Shares threat intelligence across all integrated tools automatically
+SentinelOne Singularity — their XDR platform
+Platform name
+SentinelOne Singularity XDR
+Core idea
+One platform — endpoint + cloud + identity + network all in one console
+Key feature
+Storyline — auto-links all related events into one attack story
+Your benefit
+You investigate one incident, not 20 separate alerts
+Key point for interview: XDR is EDR that grew up. It connects your entire security stack and gives you one unified view of every threat — across endpoints, cloud, network, and identity.
+
+
+
+
+
+EDR vs XDR — side by side
+
+EDR — Endpoint Detection and Response
+Watches individual endpoints only
+Deep visibility into one machine
+Process tree, file changes, memory
+Isolate, remediate, rollback
+Best for: endpoint forensics
+Blind spot: cross-layer attacks
+XDR — Extended Detection and Response
+Watches endpoints + network + email + cloud
+Broad visibility across entire environment
+Correlates alerts from all tools
+Unified response from one console
+Best for: full attack chain visibility
+Includes everything EDR does + more
+Simple one-liner difference
+EDR = Security guard watching ONE building. XDR = Security operations center watching the entire CITY — all buildings, roads, cameras, and communication lines at once.
+Feature comparison
+Scope
+EDR: Endpoint only
+XDR: Endpoint + Cloud + Network + Email + Identity
+Alert correlation
+EDR: Within one endpoint
+XDR: Across all security tools
+Investigation
+EDR: Process tree, file forensics
+XDR: Full kill chain across all layers
+Response
+EDR: Isolate, remediate, rollback
+XDR: All EDR actions + network block + cloud response
+Alert volume
+EDR: Many separate endpoint alerts
+XDR: Grouped into fewer, richer incidents
+In SentinelOne
+EDR: Core agent on endpoint
+XDR: Singularity platform with integrations
+Remember: XDR is NOT a replacement for EDR. XDR INCLUDES EDR and extends it. Every XDR has EDR at its core.
+
+
+
+SentinelOne — features you use daily
+
+1. Threat detection — how S1 finds threats
+Static AI
+Scans files before they execute — like antivirus but smarter. Uses ML to detect malicious files.
+Behavioral AI
+Watches what programs DO — not just what they are. Catches unknown/zero-day malware.
+2. Threat severity levels you see in S1
+Suspicious
+— Needs your investigation. Could be real or false positive.
+Malicious
+— Confirmed threat. S1 may have already blocked it.
+Critical
+— Active attack in progress. Escalate to L2 immediately.
+3. Storyline — S1's killer feature
+What Storyline does
+SentinelOne automatically links all related events on an endpoint into one visual story. Instead of 47 separate alerts, you see ONE incident showing: which file started it, what processes ran, what registry keys changed, what network connections were made — all in chronological order. This is what makes investigation fast.
+4. Response actions available to you
+Isolate endpoint
+Cuts machine from all network. EDR connection stays alive. Use when confirmed infected.
+Remediate
+Deletes the malicious file and all associated artifacts from the system.
+Rollback
+Undoes ALL changes malware made — restores deleted files, removes registry keys, reverts settings. Like a time machine.
+Kill process
+Terminates a running malicious process immediately without full isolation.
+Hash blacklist
+Blocks a specific malicious file hash across ALL endpoints in your environment instantly.
+Deep Visibility
+Query tool — search across all endpoint telemetry. Like Google search for your endpoint data.
+5. Deep Visibility — your forensic search tool
+Deep Visibility is like being able to search every CCTV footage from every machine in the company at once. You type a query like "show me all machines that ran PowerShell in the last 24 hours" — and it finds them instantly.
+Example Deep Visibility queries you would run
+— "Find all endpoints that communicated with IP 185.234.x.x"
+— "Which machines ran mimikatz.exe in the last 7 days?"
+— "Show all PowerShell executions from non-system accounts today"
+— "Find files with hash abc123 across all endpoints"
+SentinelOne's biggest advantage over competitors: Rollback. No other major EDR can undo malware changes as automatically and completely as S1. Always mention this in interviews.
+
+
+
+
